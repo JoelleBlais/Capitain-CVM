@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 3e13b8e7c781453459e885f6ea3e4abc
+guid: 01edc7d3aebf916408169c9c721a4078
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6382066480515605972
-    second: volume_music_on_0
+      213: -1678873450638335418
+    second: button_music_off_0
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -35,8 +35,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -90,7 +90,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: volume_music_on_0
+      name: button_music_off_0
       rect:
         serializedVersion: 2
         x: 0
@@ -98,14 +98,14 @@ TextureImporter:
         width: 25
         height: 25
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c2a90ff79585e67a0800000000000000
-      internalID: -6382066480515605972
+      spriteID: 6422edfdd7173b8e0800000000000000
+      internalID: -1678873450638335418
       vertices: []
       indices: 
       edges: []
