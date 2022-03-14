@@ -464,7 +464,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 245741975}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 48.21, y: -0.87, z: -10}
+  m_LocalPosition: {x: 30.8, y: 0.32, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1380150951}
@@ -502,6 +502,7 @@ Transform:
   - {fileID: 300274419}
   - {fileID: 354653967}
   - {fileID: 1086733681}
+  - {fileID: 1800206883}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -519,6 +520,7 @@ GameObject:
   - component: {fileID: 300274422}
   - component: {fileID: 300274421}
   - component: {fileID: 300274420}
+  - component: {fileID: 300274425}
   m_Layer: 0
   m_Name: mummy-01_9
   m_TagString: Ennemy
@@ -560,7 +562,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &300274421
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -573,7 +575,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 150bb099058ad01488ecd59460c129e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _vitesse: 3
+  _vitesse: 1
   _points:
   - {fileID: 354653967}
   - {fileID: 1086733681}
@@ -673,6 +675,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &300274425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 300274418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e31759bb230304e43a5157079edf86be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pv: 2
+  _toleranceAngle: 1.5
+  _pointDestruction: 5
+  player: {fileID: 145336867}
+  shootPos: {fileID: 1800206883}
+  range: 5
+  timeShoot: 10
+  shootSpeed: 1
+  bullet: {fileID: 4752112325598294499, guid: 4f8bfbfaad67ffb4fadd5b0c3bdd4525, type: 3}
 --- !u!1 &354653966
 GameObject:
   m_ObjectHideFlags: 0
@@ -879,12 +902,12 @@ PrefabInstance:
     - target: {fileID: 3765414188019377548, guid: 039d207ffc5def74cbb16126dfd6061f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 48.21
+      value: 30.8
       objectReference: {fileID: 0}
     - target: {fileID: 3765414188019377548, guid: 039d207ffc5def74cbb16126dfd6061f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.87
+      value: 0.32
       objectReference: {fileID: 0}
     - target: {fileID: 3765414188019377548, guid: 039d207ffc5def74cbb16126dfd6061f,
         type: 3}
@@ -3739,6 +3762,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1800206882
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1800206883}
+  m_Layer: 0
+  m_Name: shootPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1800206883
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1800206882}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -32, y: -1, z: -5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 300073122}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1883357681
 GameObject:
   m_ObjectHideFlags: 0
@@ -3817,7 +3870,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1883357681}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 48.21, y: -0.87, z: -10}
+  m_LocalPosition: {x: 16.22, y: 0.13, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
