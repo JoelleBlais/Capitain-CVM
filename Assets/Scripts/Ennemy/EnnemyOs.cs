@@ -26,9 +26,12 @@ public class EnnemyOs : MonoBehaviour
     {
         if (collision.gameObject.tag.Equals("Player"))
         {
+            /*
             PlayerBehaviour pb = collision.gameObject.GetComponent<PlayerBehaviour>();
             if (pb != null)
                 pb.CallEnnemyCollision();
+                */
+            GameManager.Instance.PlayerData.DecrEnergie();
             Destroy(gameObject);
         }
     }

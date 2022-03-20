@@ -64,8 +64,16 @@ public class PlayerData
     /// </summary>
     public System.Action Gameover;
 
+
+    /// normalement je n'aurais pas pris une liste pour les niveaux, plus un dictionnaire ou une hashtable mais mettre ça en json après ouf je préférais copier la recette de la liste de coffre ;D
+    private List<string> _niveauAccomplis;
+
+    public string[] NiveauAccomplis{ get { return this._niveauAccomplis.ToArray(); } }
+
     private int _nbrFlocons;
+    private int _nbrPoison;
     public int Flocons { get { return this._nbrFlocons; } }
+    public int Poison { get { return this._nbrPoison; } }
 
     public int Energie { get { return this._energie; } }
     public int Vie { get { return this._vie; } }
@@ -81,13 +89,16 @@ public class PlayerData
         this._volumeMusique = 0;
         this._volumeEffet = 0;
         this._nbrFlocons = 0;
+        this._nbrPoison = 0;
+        this._niveauAccomplis = new List<string>();
         this.UIPerteEnergie = null;
         this.UIPerteVie = null;
         this.Gameover = null;
         this._chestOpenList = new List<string>();
     }
 
-    public PlayerData(int vie = 1, int energie = 2, int score = 0, int flocons = 0,
+    public PlayerData(int vie = 1, int energie = 2, int score = 0, int flocons = 0, int poison = 0,
+        List<string> niveau = null,
         float volumeGeneral = 0, float volumeMusique = 0, float volumeEffet = 0,
         
         System.Action uiPerteEnergie = null, System.Action uiPerteVie = null,
@@ -100,6 +111,8 @@ public class PlayerData
         this._volumeMusique = volumeMusique;
         this._volumeEffet = volumeEffet;
         this._nbrFlocons = flocons;
+        this._nbrPoison = poison;
+        this._niveauAccomplis = niveau;
         this.UIPerteEnergie += uiPerteEnergie;
         this.UIPerteVie += uiPerteVie;
         this.Gameover += gameOver;
@@ -179,6 +192,15 @@ public class PlayerData
         this._nbrFlocons += gain;
     }
 
+    public void IncrPoison(int gain = 1)
+    {
+        this._nbrPoison += gain;
+    }
+
+    public void niveauTermine(string niveau)
+    {
+        this._niveauAccomplis.Add(niveau);
+    }
     /// <summary>
     /// Ajoute le nom du coffre à la liste
     /// </summary>

@@ -19,6 +19,7 @@ public static class PlayerDataJson
         json += tab + "\"energie\":" + data.Energie + "," + newline;
         json += tab + "\"score\":" + data.Score + "," + newline;
         json += tab + "\"flocons\":" + data.Flocons + "," + newline;
+        json += tab + "\"poison\":" + data.Poison + "," + newline;
         json += tab + "\"volumeGeneral\":" + data.VolumeGeneral.ToString().Replace(',', '.') + "," + newline; 
         json += tab + "\"volumeMusique\":" + data.VolumeMusique.ToString().Replace(',', '.') + "," + newline; 
         json += tab + "\"volumeEffet\":" + data.VolumeEffet.ToString().Replace(',', '.') + "," + newline; 
@@ -37,6 +38,23 @@ public static class PlayerDataJson
             json += tab + "]" + newline;
         }
         else json += "]" + newline;
+
+        json += tab + "\"listeNiveau\":[";
+        if (data.NiveauAccomplis.Length > 0)
+        {
+            json += newline;
+            for (int i = 0; i < data.NiveauAccomplis.Length; i++)
+            {
+                string nivData = data.NiveauAccomplis[i];
+                json += tab + tab + "\"" + nivData + "\"";
+                if (i + 1 < data.NiveauAccomplis.Length)
+                    json += ",";
+                json += newline;
+            }
+            json += tab + "]" + newline;
+        }
+        else json += "]" + newline;
+
         json += "}";
         return json;
     }
@@ -59,9 +77,10 @@ public static class PlayerDataJson
             throw new JSONFormatExpcetion();
         json = json.Replace("\t", string.Empty);
 
-        int vie = 0, energie = 0, score = 0, flocons = 0;
+        int vie = 0, energie = 0, score = 0, flocons = 0, poison = 0;
         float vlmGeneral = 0, vlmMusique = 0, vlmEffet = 0;
         List<string> chests = new List<string>();
+        List<string> lesNiveaux = new List<string>();
         string[] lignes = json.Split('\n');
         
         for(int i = 1; i < lignes.Length || lignes[i] != "}"; i++)
@@ -86,6 +105,9 @@ public static class PlayerDataJson
                 case "\"flocons\"":
                     flocons = int.Parse(parametre[1].Replace(",", string.Empty));
                     break;
+                case "\"poison\"":
+                    flocons = int.Parse(parametre[1].Replace(",", string.Empty));
+                    break;
                 case "\"volumeGeneral\"":
                     vlmGeneral = float.Parse(parametre[1].Replace(",", string.Empty).Replace('.', ','));
                     break;
@@ -107,10 +129,22 @@ public static class PlayerDataJson
                             .Replace("\"", string.Empty));
                     }
                     break;
+                case "\"listeNiveau\"":
+                    if (parametre[1] == "[]")
+                        break;
+                    else if (parametre[1] != "[")
+                        throw new JSONFormatExpcetion();
+                    while(lignes[++i] != "]")
+                    {
+                        lesNiveaux.Add(lignes[i]
+                            .Replace(",", string.Empty)
+                            .Replace("\"", string.Empty));
+                    }
+                    break;
             }
         }
 
-        return new PlayerData(vie, energie, score, flocons, vlmGeneral, vlmMusique, vlmEffet, ChestList: chests);
+        return new PlayerData(vie, energie, score, flocons, poison, niveau: lesNiveaux, vlmGeneral, vlmMusique, vlmEffet, ChestList: chests);
     }
 }
 

@@ -385,6 +385,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FinDeNiveau
       objectReference: {fileID: 0}
+    - target: {fileID: 556784649997724423, guid: 19fdb3893715fbb448a05aa78ab9d492,
+        type: 3}
+      propertyPath: m_TagString
+      value: Niveau2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19fdb3893715fbb448a05aa78ab9d492, type: 3}
 --- !u!1001 &374855865

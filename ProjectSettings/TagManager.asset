@@ -9,6 +9,10 @@ TagManager:
   - Plateform
   - Tilemap Water
   - Flocon
+  - Poison
+  - Niveau1
+  - Niveau3
+  - Niveau2
   layers:
   - Default
   - TransparentFX

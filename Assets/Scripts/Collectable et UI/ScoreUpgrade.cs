@@ -26,6 +26,11 @@ public class ScoreUpgrade : MonoBehaviour
                 GameManager.Instance
                 .PlayerData.IncrFlocon();
             }
+            else if (this.transform.tag.Equals("Poison"))
+            {
+                GameManager.Instance
+                .PlayerData.IncrPoison();
+            }
             GameObject.Destroy(this.gameObject);
 
         }

@@ -28,7 +28,39 @@ public class MainMenuButtonAction : MonoBehaviour
     /// <param name="nom">Nom du niveau à charger</param>
     public void ChargerNiveau(string nom)
     {
-        SceneManager.LoadScene(nom);
+
+        if (nom == "Level2")
+        {
+            for (int i =0; i<=GameManager.Instance.PlayerData.NiveauAccomplis.Length-1; i++)
+            {
+                if (GameManager.Instance.PlayerData.NiveauAccomplis[i] == "Niveau1")
+                {
+                SceneManager.LoadScene("Level2");
+                }
+                else
+                {
+                SceneManager.LoadScene("MainMenu");
+                }
+            }
+        }
+        else if (nom == "Level3")
+        {
+            for (int i =0; i<=GameManager.Instance.PlayerData.NiveauAccomplis.Length-1; i++)
+            {
+                if (GameManager.Instance.PlayerData.NiveauAccomplis[i] == "Niveau2")
+                {
+                SceneManager.LoadScene("Level3");
+                }
+                else
+                {
+                SceneManager.LoadScene("MainMenu");
+                }
+            }
+        }
+        else
+        {
+                SceneManager.LoadScene("Level1");
+        }
     }
 
     /// <summary>
