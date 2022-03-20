@@ -64,6 +64,9 @@ public class PlayerData
     /// </summary>
     public System.Action Gameover;
 
+    private int _nbrFlocons;
+    public int Flocons { get { return this._nbrFlocons; } }
+
     public int Energie { get { return this._energie; } }
     public int Vie { get { return this._vie; } }
     public int Score { get { return this._score; } }
@@ -77,14 +80,16 @@ public class PlayerData
         this._volumeGeneral = 0;
         this._volumeMusique = 0;
         this._volumeEffet = 0;
+        this._nbrFlocons = 0;
         this.UIPerteEnergie = null;
         this.UIPerteVie = null;
         this.Gameover = null;
         this._chestOpenList = new List<string>();
     }
 
-    public PlayerData(int vie = 1, int energie = 2, int score = 0,
+    public PlayerData(int vie = 1, int energie = 2, int score = 0, int flocons = 0,
         float volumeGeneral = 0, float volumeMusique = 0, float volumeEffet = 0,
+        
         System.Action uiPerteEnergie = null, System.Action uiPerteVie = null,
         System.Action gameOver = null, List<string> ChestList = null)
     {
@@ -94,6 +99,7 @@ public class PlayerData
         this._volumeGeneral = volumeGeneral;
         this._volumeMusique = volumeMusique;
         this._volumeEffet = volumeEffet;
+        this._nbrFlocons = flocons;
         this.UIPerteEnergie += uiPerteEnergie;
         this.UIPerteVie += uiPerteVie;
         this.Gameover += gameOver;
@@ -167,6 +173,12 @@ public class PlayerData
         this._score += gain;
     }
 
+
+    public void IncrFlocon(int gain = 1)
+    {
+        this._nbrFlocons += gain;
+    }
+
     /// <summary>
     /// Ajoute le nom du coffre à la liste
     /// </summary>
@@ -186,4 +198,5 @@ public class PlayerData
     {
         return this._chestOpenList.Contains(nom);
     }
+
 }

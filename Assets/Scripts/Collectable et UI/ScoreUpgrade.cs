@@ -20,7 +20,14 @@ public class ScoreUpgrade : MonoBehaviour
                 .PlayClipAtPoint(_clip, this.transform.position);
             GameManager.Instance
                 .PlayerData.IncrScore(this._gainPoint);
+            
+            if (this.transform.tag.Equals("Flocon"))
+            {
+                GameManager.Instance
+                .PlayerData.IncrFlocon();
+            }
             GameObject.Destroy(this.gameObject);
+
         }
     }
 }

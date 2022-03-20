@@ -45,7 +45,10 @@ public class GameManager : MonoBehaviour
     {
         SaveData();
         SceneManager.activeSceneChanged += ChangementScene;
-        ChangementScene(new Scene(), SceneManager.GetActiveScene());
+        
+        
+        //ChangementScene(new Scene(), SceneManager.GetActiveScene());
+        
         //List<string> cl = new List<string>();
         //cl.Add("test_1");
         //cl.Add("test_2");

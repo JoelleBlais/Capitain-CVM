@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class EnnemyOs : MonoBehaviour
 {
+    [SerializeField]
+    private float damage;
 
-    public float damage;
-    public float dieTime;
+    [SerializeField]
+    private float dieTime;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,10 +21,19 @@ public class EnnemyOs : MonoBehaviour
         
     }
 
-    void OnCollisionEnter2D(Collision2D col)
+    
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        Destroy(gameObject);
+        if (collision.gameObject.tag.Equals("Player"))
+        {
+            PlayerBehaviour pb = collision.gameObject.GetComponent<PlayerBehaviour>();
+            if (pb != null)
+                pb.CallEnnemyCollision();
+            Destroy(gameObject);
+        }
     }
+    
+    
 
     IEnumerator CountDownTimer()
     {

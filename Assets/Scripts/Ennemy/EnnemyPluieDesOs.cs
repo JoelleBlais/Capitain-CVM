@@ -46,7 +46,8 @@ public class EnnemyPluieDesOs : EnnemyBehaviour
         for (int i = 0; i <= _positionOs.Length - 1; i++)
         {
             GameObject nouvelOs = Instantiate(_os, _positionOs[i].position, Quaternion.identity);
-            nouvelOs.GetComponent<Rigidbody2D>().velocity = new Vector2(_vitesseTombeOs * Time.fixedDeltaTime, 0f);
+            nouvelOs.GetComponent<Rigidbody2D>().velocity = new Vector2(1,1);
+            nouvelOs.GetComponent<Rigidbody2D>().drag = _vitesseTombeOs;
             pluieTombeUneFois = false;
         }
         //pluieTombeUneFois = false;
