@@ -29,6 +29,10 @@ public class MainMenuButtonAction : MonoBehaviour
     public void ChargerNiveau(string nom)
     {
 
+//J'ai fait un code très laid pour essayer de receuillir si le niveau précédent avait été accompli pour pouvoir le sélectionner à partir du menu. 
+//ce code n'est pas très satisfaisant. 
+
+/*
         if (nom == "Level2")
         {
             for (int i =0; i<=GameManager.Instance.PlayerData.NiveauAccomplis.Length-1; i++)
@@ -39,7 +43,7 @@ public class MainMenuButtonAction : MonoBehaviour
                 }
                 else
                 {
-                SceneManager.LoadScene("MainMenu");
+                SceneManager.LoadScene("Level1");
                 }
             }
         }
@@ -51,10 +55,6 @@ public class MainMenuButtonAction : MonoBehaviour
                 {
                 SceneManager.LoadScene("Level3");
                 }
-                else
-                {
-                SceneManager.LoadScene("MainMenu");
-                }
             }
         }
         else
@@ -62,6 +62,10 @@ public class MainMenuButtonAction : MonoBehaviour
                 SceneManager.LoadScene("Level1");
         }
     }
+    */
+        SceneManager.LoadScene(nom);
+    }
+
 
     /// <summary>
     /// Permet de fermer l'application

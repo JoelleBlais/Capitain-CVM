@@ -34,6 +34,10 @@ public class EnnemyOs : MonoBehaviour
             GameManager.Instance.PlayerData.DecrEnergie();
             Destroy(gameObject);
         }
+        if (collision.gameObject.tag.Equals("Tilemap"))
+        {
+            Destroy(gameObject);
+        }
     }
     
     
