@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
         SceneManager.activeSceneChanged += ChangementScene;
         
         
-        //ChangementScene(new Scene(), SceneManager.GetActiveScene());
+        ChangementScene(new Scene(), SceneManager.GetActiveScene());
         
         //List<string> cl = new List<string>();
         //cl.Add("test_1");
@@ -131,13 +131,14 @@ public class GameManager : MonoBehaviour
     public void ChangerScene(string nomScene)
     {
         _audioManager.StopAudio(0.3f);
-        GameObject.Find("Fondu").SetActive(true);
+        //GameObject.Find("Fondu").SetActive(true);
         SceneManager.LoadScene(nomScene);
     }
 
     public void ChangementScene(Scene current, Scene next)
     {
-        GameObject.Find("Fondu").SetActive(false);
+        //GameObject.Find("Fondu").SetActive(false);
+        Debug.Log("allo");
     }
 
     #endregion
