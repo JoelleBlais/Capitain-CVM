@@ -3979,7 +3979,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1138826158}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: 
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 0
 --- !u!114 &1138826158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7946,6 +7957,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 387850250589047654, guid: 00b787e85919e1245b3bda475f91e696,
+        type: 3}
+      propertyPath: _playlist.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 387850250589047654, guid: 00b787e85919e1245b3bda475f91e696,
+        type: 3}
+      propertyPath: _playlist.Array.data[2].Nom
+      value: Level2
+      objectReference: {fileID: 0}
+    - target: {fileID: 387850250589047654, guid: 00b787e85919e1245b3bda475f91e696,
+        type: 3}
+      propertyPath: _playlist.Array.data[3].Nom
+      value: Level3
+      objectReference: {fileID: 0}
+    - target: {fileID: 387850250589047654, guid: 00b787e85919e1245b3bda475f91e696,
+        type: 3}
+      propertyPath: _playlist.Array.data[2].Clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 0f5fd1585f4014b5f980a114a320acfe, type: 3}
+    - target: {fileID: 387850250589047654, guid: 00b787e85919e1245b3bda475f91e696,
+        type: 3}
+      propertyPath: _playlist.Array.data[3].Clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6933804eec4774dad9c659df297109b7, type: 3}
     - target: {fileID: 387850250589047672, guid: 00b787e85919e1245b3bda475f91e696,
         type: 3}
       propertyPath: m_RootOrder
@@ -8128,7 +8164,7 @@ PrefabInstance:
     - target: {fileID: 8825697746811437030, guid: 848fc5e9804caa541b89cfc389a4bbca,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 848fc5e9804caa541b89cfc389a4bbca, type: 3}

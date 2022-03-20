@@ -6,14 +6,12 @@ using TMPro;
 public class CollectableText : MonoBehaviour
 {
     private TextMeshProUGUI texteFlocon;
-    private int nbrFlocons;
 
     // Start is called before the first frame update
     void Start()
     {
-        nbrFlocons = GameManager.Instance.PlayerData.Flocons;
         texteFlocon = GetComponent<TextMeshProUGUI>();
-        texteFlocon.text = nbrFlocons.ToString();
+        texteFlocon.text = GameManager.Instance.PlayerData.Flocons.ToString();
     }
 
     // Update is called once per frame
