@@ -39,8 +39,6 @@ public class EnnemyOs : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    
-    
 
     IEnumerator CountDownTimer()
     {
